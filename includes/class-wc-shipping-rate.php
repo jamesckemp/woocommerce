@@ -44,7 +44,7 @@ class WC_Shipping_Rate {
 	 *
 	 * @param string $id
 	 * @param string $label
-	 * @param float $cost
+	 * @param integer $cost
 	 * @param array $taxes
 	 * @param string $method_id
 	 */
@@ -62,7 +62,7 @@ class WC_Shipping_Rate {
 	 * @return array
 	 */
 	public function get_shipping_tax() {
-		return apply_filters( 'woocommerce_get_shipping_tax', sizeof( $this->taxes ) > 0 && ! WC()->customer->is_vat_exempt() ? array_sum( $this->taxes ) : 0, $this );
+		return apply_filters( 'woocommerce_get_shipping_tax', sizeof( $this->taxes ) > 0 && ! WC()->customer->get_is_vat_exempt() ? array_sum( $this->taxes ) : 0, $this );
 	}
 
 	/**
@@ -71,7 +71,7 @@ class WC_Shipping_Rate {
 	 * @return string
 	 */
 	public function get_label() {
-		return apply_filters( 'woocommerce_shipping_rate_label', $this->label );
+		return apply_filters( 'woocommerce_shipping_rate_label', $this->label, $this );
 	}
 
 	/**
@@ -87,8 +87,6 @@ class WC_Shipping_Rate {
 	/**
 	 * Get all meta data for this rate.
 	 * @since 2.6.0
-	 * @param string $key
-	 * @param string $value
 	 */
 	public function get_meta_data() {
 		return $this->meta_data;

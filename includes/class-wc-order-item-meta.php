@@ -1,7 +1,6 @@
 <?php
-
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+	exit;
 }
 
 /**
@@ -9,6 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * A Simple class for managing order item meta so plugins add it in the correct format.
  *
+ * @deprecated  3.0.0 wc_display_item_meta function is used instead.
  * @class 		order_item_meta
  * @version		2.4
  * @package		WooCommerce/Classes
@@ -33,7 +33,6 @@ class WC_Order_Item_Meta {
 	 *
 	 * @param array $item defaults to array()
 	 * @param \WC_Product $product defaults to null
-	 * @return \WC_Order_Item_Meta instance
 	 */
 	public function __construct( $item = array(), $product = null ) {
 		// Backwards (pre 2.4) compat
@@ -42,7 +41,6 @@ class WC_Order_Item_Meta {
 			$this->meta   = array_filter( (array) $item );
 			return;
 		}
-
 		$this->item    = $item;
 		$this->meta    = array_filter( (array) $item['item_meta'] );
 		$this->product = $product;
@@ -150,7 +148,7 @@ class WC_Order_Item_Meta {
 	 */
 	public function get_formatted_legacy( $hideprefix = '_' ) {
 		if ( ! is_ajax() ) {
-			_deprecated_function( 'get_formatted_legacy', '2.4', 'Item Meta Data is being called with legacy arguments' );
+			wc_deprecated_function( 'get_formatted_legacy', '2.4', 'Item Meta Data is being called with legacy arguments' );
 		}
 
 		$formatted_meta = array();

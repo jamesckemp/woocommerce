@@ -4,8 +4,6 @@
  * Class Functions.
  * @package WooCommerce\Tests\Formatting
  * @since 2.2
- *
- * @todo Split formatting class into smaller classes
  */
 class WC_Tests_Formatting_Functions extends WC_Unit_Test_Case {
 
@@ -29,10 +27,10 @@ class WC_Tests_Formatting_Functions extends WC_Unit_Test_Case {
 	 */
 	public function test_wc_get_filename_from_url() {
 
-		$this->assertEquals( 'woocommerce.pdf', wc_get_filename_from_url( 'https://www.woothemes.com/woocommerce.pdf' ) );
+		$this->assertEquals( 'woocommerce.pdf', wc_get_filename_from_url( 'https://woocommerce.com/woocommerce.pdf' ) );
 		$this->assertEmpty( wc_get_filename_from_url( 'ftp://wc' ) );
 		$this->assertEmpty( wc_get_filename_from_url( 'http://www.skyverge.com' ) );
-		$this->assertEquals( 'woocommerce',  wc_get_filename_from_url( 'https://www.woothemes.com/woocommerce' ) );
+		$this->assertEquals( 'woocommerce',  wc_get_filename_from_url( 'https://woocommerce.com/woocommerce' ) );
 	}
 
 	/**
@@ -97,7 +95,7 @@ class WC_Tests_Formatting_Functions extends WC_Unit_Test_Case {
 			array( 25.4, wc_get_dimension( 10, 'cm', 'in' ) ),
 			array( 914.4, wc_get_dimension( 10, 'cm', 'yd' ) ),
 			array( 393.7, wc_get_dimension( 10, 'in', 'm' ) ),
-			array( 0.010936133, wc_get_dimension( 10, 'yd', 'mm' ) )
+			array( 0.010936133, wc_get_dimension( 10, 'yd', 'mm' ) ),
 		);
 
 		// restore default
@@ -313,7 +311,7 @@ class WC_Tests_Formatting_Functions extends WC_Unit_Test_Case {
 			'pear'       => 'grape',
 			'vegetables' => array(
 				'cucumber' => 'asparagus',
-			)
+			),
 		);
 
 		$a2 = array(
@@ -535,7 +533,7 @@ class WC_Tests_Formatting_Functions extends WC_Unit_Test_Case {
 
 		// test with manually set UTC offset
 		update_option( 'gmt_offset', -4 );
-		$this->assertEquals( 'America/Halifax', wc_timezone_string() );
+		$this->assertNotEquals( 'UTC', wc_timezone_string() );
 
 		// test with invalid offset
 		update_option( 'gmt_offset', 99 );
@@ -615,8 +613,11 @@ class WC_Tests_Formatting_Functions extends WC_Unit_Test_Case {
 	 */
 	public function test_wc_format_postcode() {
 
-		// generic postcode
+		// Generic postcode
 		$this->assertEquals( '02111', wc_format_postcode( ' 02111	', 'US' ) );
+
+		// US 9-digit postcode
+		$this->assertEquals( '02111-9999', wc_format_postcode( ' 021119999	', 'US' ) );
 
 		// UK postcode
 		$this->assertEquals( 'PCRN 1ZZ', wc_format_postcode( 'pcrn1zz', 'GB' ) );
@@ -643,5 +644,4 @@ class WC_Tests_Formatting_Functions extends WC_Unit_Test_Case {
 		$this->assertEquals( 'st.',    wc_trim_string( 'string', 3, '.' ) );
 		$this->assertEquals( 'string¥', wc_trim_string( 'string¥', 7, '' ) );
 	}
-
 }

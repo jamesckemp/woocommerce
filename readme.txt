@@ -1,9 +1,9 @@
 === WooCommerce ===
-Contributors: automattic, mikejolley, jameskoster, claudiosanches, jshreve, coderkevin, woothemes
-Tags: ecommerce, e-commerce, store, sales, sell, shop, cart, checkout, downloadable, downloads, paypal, storefront
+Contributors: automattic, mikejolley, jameskoster, claudiosanches, jshreve, coderkevin, claudiulodro, woothemes, iCaleb
+Tags: ecommerce, e-commerce, store, sales, sell, shop, cart, checkout, downloadable, downloads, paypal, storefront, woo commerce
 Requires at least: 4.4
-Tested up to: 4.5
-Stable tag: 2.5.5
+Tested up to: 4.7
+Stable tag: 3.0.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -37,7 +37,7 @@ One of the biggest risks of using a hosted eCommerce platform is what happens to
 
 [Storefront](https://wordpress.org/themes/storefront/) is a free WordPress theme available to any WooCommerce store. Along with deep WooCommerce integration, Storefront prioritizes speed and uptime while eliminating theme and plugin conflicts during major updates.
 
-Define your style even further by customizing Storefront to your liking or choosing from one of our several [Storefront child themes](https://www.woothemes.com/product-category/themes/storefront-child-theme-themes/). It’s all up to you, and all open source.
+Define your style even further by customizing Storefront to your liking or choosing from one of our several [Storefront child themes](https://woocommerce.com/product-category/themes/storefront-child-theme-themes/). It’s all up to you, and all open source.
 
 = Built with developers in mind =
 
@@ -65,33 +65,36 @@ Keen to see them all? Search WordPress.org for ‘WooCommerce’ to dive in.
 
 If you’re looking for something endorsed and maintained by the developers who built WooCommerce, there are a plethora of premium eCommerce extensions, the most popular of which include:
 
-- [WooCommerce Subscriptions](https://www.woothemes.com/products/woocommerce-subscriptions/)
-- [WooCommerce Memberships](https://www.woothemes.com/products/woocommerce-memberships/)
-- [WooCommerce Bookings](https://www.woothemes.com/products/woocommerce-bookings/)
-- [Dynamic Pricing](https://www.woothemes.com/products/dynamic-pricing/)
-- [Table Rate Shipping](https://www.woothemes.com/products/table-rate-shipping/)
-- [Product CSV Import Suite](https://www.woothemes.com/products/product-csv-import-suite/)
+- [WooCommerce Subscriptions](https://woocommerce.com/products/woocommerce-subscriptions/)
+- [WooCommerce Memberships](https://woocommerce.com/products/woocommerce-memberships/)
+- [WooCommerce Bookings](https://woocommerce.com/products/woocommerce-bookings/)
+- [Dynamic Pricing](https://woocommerce.com/products/dynamic-pricing/)
+- [Table Rate Shipping](https://woocommerce.com/products/table-rate-shipping/)
+- [Product CSV Import Suite](https://woocommerce.com/products/product-csv-import-suite/)
 
-And there’s plenty more where they came from. Visit our [extensions page](https://www.woothemes.com/product-category/woocommerce-extensions/) to find out everything you’re capable of and all that's possible with premium WooCommerce extensions.
+And there’s plenty more where they came from. Visit our [extensions page](https://woocommerce.com/product-category/woocommerce-extensions/) to find out everything you’re capable of and all that's possible with premium WooCommerce extensions.
 
 = Join our growing community =
 
 When you download WooCommerce, you join a community of more than a million store owners, developers, and WordPress enthusiasts. We’re one of the fastest-growing open source communities online, and whether you’re a n00b or a Ninja, we’d love to have you!
 
-If you’re interested in contributing to WooCommerce we’ve got more than 350 contributors, and there’s always room for more. Head over to the [WooCommerce GitHub Repository](https://github.com/woothemes/woocommerce) to find out how you can pitch in.
+If you’re interested in contributing to WooCommerce we’ve got more than 350 contributors, and there’s always room for more. Head over to the [WooCommerce GitHub Repository](https://github.com/woocommerce/woocommerce) to find out how you can pitch in.
 
 Want to add a new language to WooCommerce? Swell! You can contribute via [translate.wordpress.org](https://translate.wordpress.org/projects/wp-plugins/woocommerce).
 
-And, finally, consider joining or spearheading a WooCommerce Meetup locally, more about those [here](https://www.woothemes.com/woocommerce/meetups/).
+And, finally, consider joining or spearheading a WooCommerce Meetup locally, more about those [here](https://woocommerce.com/woocommerce/meetups/).
 
 == Installation ==
 
 = Minimum Requirements =
 
-* WordPress 3.8 or greater
-* PHP version 5.2.4 or greater
-* MySQL version 5.0 or greater
+* PHP version 5.2.4 or greater (PHP 5.6 or greater is recommended)
+* MySQL version 5.0 or greater (MySQL 5.6 or greater is recommended)
 * Some payment gateways require fsockopen support (for IPN access)
+* WooCommerce 2.5 requires WordPress 4.1+
+* WooCommerce 2.6 requires WordPress 4.4+
+
+Visit the [WooCommerce server requirements documentation](https://docs.woocommerce.com/document/server-requirements/) for a detailed list of server requirements.
 
 = Automatic installation =
 
@@ -111,25 +114,25 @@ If on the off-chance you do encounter issues with the shop/category pages after 
 
 = Dummy data =
 
-WooCommerce comes with some dummy data you can use to see how products look; either import dummy_data.xml via the [WordPress importer](https://wordpress.org/extend/plugins/wordpress-importer/) or use our [CSV Import Suite plugin](https://www.woothemes.com/products/product-csv-import-suite/) to import dummy_data.csv and dummy_data_variations.csv.
+WooCommerce comes with some dummy data you can use to see how products look; either import dummy_data.xml via the [WordPress importer](https://wordpress.org/plugins/wordpress-importer/) or use our [CSV Import Suite plugin](https://woocommerce.com/products/product-csv-import-suite/) to import dummy_data.csv and dummy_data_variations.csv.
 
 == Frequently Asked Questions ==
 
 = Where can I find WooCommerce documentation and user guides? =
 
-For help setting up and configuring WooCommerce please refer to our [user guide](https://docs.woothemes.com/documentation/plugins/woocommerce/getting-started/)
+For help setting up and configuring WooCommerce please refer to our [user guide](https://docs.woocommerce.com/documentation/plugins/woocommerce/getting-started/)
 
-For extending or theming WooCommerce, see our [codex](https://docs.woothemes.com/documentation/plugins/woocommerce/woocommerce-codex/).
+For extending or theming WooCommerce, see our [codex](https://docs.woocommerce.com/documentation/plugins/woocommerce/woocommerce-codex/).
 
 = Where can I get support or talk to other users? =
 
 If you get stuck, you can ask for help in the [WooCommerce Plugin Forum](https://wordpress.org/support/plugin/woocommerce).
 
-For help with premium add-ons from WooThemes, use [our helpdesk](https://support.woothemes.com/).
+For help with premium extensions from WooThemes, use [our helpdesk](https://support.woothemes.com/).
 
 = Will WooCommerce work with my theme? =
 
-Yes; WooCommerce will work with any theme, but may require some styling to make it match nicely. Please see our [codex](https://docs.woothemes.com/documentation/plugins/woocommerce/woocommerce-codex/) for help. If you're looking for a theme with built in WooCommerce integration we recommend [Storefront](https://www.woothemes.com/storefront/).
+Yes; WooCommerce will work with any theme, but may require some styling to make it match nicely. Please see our [codex](https://docs.woocommerce.com/documentation/plugins/woocommerce/woocommerce-codex/) for help. If you're looking for a theme with built in WooCommerce integration we recommend [Storefront](https://woocommerce.com/storefront/).
 
 = Where can I request new features, eCommerce themes and extensions? =
 
@@ -137,15 +140,15 @@ You can vote on and request new features and extensions in our [WooIdeas board](
 
 = Where can I report bugs or contribute to the project? =
 
-Bugs can be reported either in our support forum or preferably on the [WooCommerce GitHub repository](https://github.com/woothemes/woocommerce/issues).
+Bugs can be reported either in our support forum or preferably on the [WooCommerce GitHub repository](https://github.com/woocommerce/woocommerce/issues).
 
 = Where can I find the REST API documentation? =
 
-You can find the documentation of our REST API on the [WooCommerce REST API Docs](https://woothemes.github.io/woocommerce-rest-api-docs/).
+You can find the documentation of our REST API on the [WooCommerce REST API Docs](https://woocommerce.github.io/woocommerce-rest-api-docs/).
 
 = WooCommerce is awesome! Can I contribute? =
 
-Yes you can! Join in on our [GitHub repository](http://github.com/woothemes/woocommerce/) :)
+Yes you can! Join in on our [GitHub repository](http://github.com/woocommerce/woocommerce/) :)
 
 == Screenshots ==
 
@@ -158,41 +161,14 @@ Yes you can! Join in on our [GitHub repository](http://github.com/woothemes/wooc
 
 == Changelog ==
 
-= 2.6.0 - TBD =
-* Feature - Introduced Shipping Zone functionality, and re-usable instance based shipping methods.
-* Feature - Tabbed "My Account" area.
-* Feature - Cart operations now use ajax (item quantities/remove, coupon apply/remove, shipping options).
-* Feature - Layered nav; filter by rating.
-* Feature - On-hold order emails.
-* Dev - All new REST API based on the WP REST API. The old WC REST API is still available, but the new one is preferred.
-* Dev - Added ability for shipping methods to store meta data to the order.
-* Dev - Added Payment Gateway Tokenization API for storing and retrieving tokens in a standardized manner.
-* Dev - Migrated custom term meta implementation to WP Term Meta.
-* Dev - Added new wc_get_orders() function to get order objects and ids instead of direct get_posts() calls.
-* Dev - Made coupon optional in cart has_discount() method.
-* Dev - Made the review template more editable.
-* Fix - Update download permission user and email when changed.
-* Tweak - Ignore catalog visibility on products shortcode when specifying IDs or SKUs.
-* Tweak - Added context to checkout error messages.
-* Tweak - Added SKU field to grouped products.
-* Tweak - Support qty display in cart messages.
-* Tweak - Hide min order amount field when not needed in shipping settings.
-* Tweak - If shipping < 999.99, use 'shipping' arg when passing values to PayPal.
-* Tweak - Show net sales on dashboard.
-* Tweak - Replaced credit card icons with SVG.
-* Tweak - Enqueue scripts on pages with checkout shortcodes.
-* Tweak - Color code manual, system and customer notes.
-* Tweak - Layered Nav Refactoring to improve performance.
-* Tweak - Removed tag/cat classes from loops since WP does the same.
-* Tweak - Added hash check for orders so that if the cart changes before payment, a new order is made.
-* Tweak - Removed unused 'view mode' under screen options.
-* Tweak - Added 110 new currencies (including Bitcoin).
+= 3.1.0 - 2017-xx-xx =
+* Included WooCommerce endpoints as options nav menu settings on Customize.
+* Dev - Updated Emogrifier to version 1.2.
+* Dev - Sort product data tabs by priority in admin screen.
 
-[See changelog for all versions](https://raw.githubusercontent.com/woothemes/woocommerce/master/CHANGELOG.txt).
+[See changelog for all versions](https://raw.githubusercontent.com/woocommerce/woocommerce/master/CHANGELOG.txt).
 
 == Upgrade Notice ==
 
-= 2.6.0 =
-2.6 is a major update so it is important that you make backups, and ensure themes and extensions are 2.6 compatible before upgrading. Developers should catch up with [the development blog](https://woocommerce.wordpress.com/) to see what has been happening in core.
-
-Note: 2.6 includes Shipping Zone functionality. Please ensure shipping method extensions in particular (e.g. Table Rate Shipping) support 2.6 **before** updating.
+= 3.0.2 =
+3.0 is a major update. [Make a full site backup](https://docs.woocommerce.com/document/backup-wordpress-content), update your theme and extensions, and [review update best practices](https://docs.woocommerce.com/document/how-to-update-your-site) before upgrading.

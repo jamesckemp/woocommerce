@@ -3,8 +3,6 @@
 /**
  * Class WC_Tests_Install.
  * @package WooCommerce\Tests\Util
- *
- * @todo determine if this should be in Util or separate namespace
  */
 class WC_Tests_Install extends WC_Unit_Test_Case {
 
@@ -12,7 +10,7 @@ class WC_Tests_Install extends WC_Unit_Test_Case {
 	 * Test check version.
 	 */
 	public function test_check_version() {
-		update_option( 'woocommerce_version', WC()->version - 1 );
+		update_option( 'woocommerce_version', ( (float) WC()->version - 1 ) );
 		update_option( 'woocommerce_db_version', WC()->version );
 		WC_Install::check_version();
 
@@ -32,7 +30,7 @@ class WC_Tests_Install extends WC_Unit_Test_Case {
 		// clean existing install first
 		if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 			define( 'WP_UNINSTALL_PLUGIN', true );
-			update_option( 'woocommerce_status_options', array( 'uninstall_data' => 1 ) );
+			define( 'WC_REMOVE_ALL_DATA', true );
 		}
 
 		include( dirname( dirname( dirname( dirname( __FILE__ ) ) ) ) . '/uninstall.php' );
@@ -86,7 +84,7 @@ class WC_Tests_Install extends WC_Unit_Test_Case {
 		// Clean existing install first
 		if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 			define( 'WP_UNINSTALL_PLUGIN', true );
-			update_option( 'woocommerce_status_options', array( 'uninstall_data' => 1 ) );
+			define( 'WC_REMOVE_ALL_DATA', true );
 		}
 		include( dirname( dirname( dirname( dirname( __FILE__ ) ) ) ) . '/uninstall.php' );
 
@@ -115,5 +113,4 @@ class WC_Tests_Install extends WC_Unit_Test_Case {
 		$result = ob_get_clean();
 		$this->assertTrue( is_string( $result ) );
 	}
-
 }
